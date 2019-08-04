@@ -1,29 +1,61 @@
 package Observer.order;
 
-public class Order {
+import Observer.notification.Observer;
 
- private Long orederNumber;
+import java.util.HashSet;
+import java.util.Set;
 
- private OrderStatus orederStatus;
+public class Order implements Observable {
+
+ private Long orderNumber;
+
+ private OrderStatus orderStatus;
+
+ private Set<Observer>  registeredObservers;
+
 
  public Order(Long orederNumber, OrderStatus orederStatus) {
-  this.orederNumber = orederNumber;
-  this.orederStatus = orederStatus;
+  this.orderNumber = orederNumber;
+  this.orderStatus = orederStatus;
+   registeredObservers = new HashSet<>();
  }
 
- public Long getOrederNumber() {
-  return orederNumber;
+
+ @Override
+ public void registerObserver(Observer observer) {
+  registeredObservers.add(observer);
  }
 
- public void setOrederNumber(Long orederNumber) {
-  this.orederNumber = orederNumber;
+ @Override
+ public void unregisterObserver(Observer observer) {
+   registeredObservers.remove(observer);
  }
 
- public OrderStatus getOrederStatus() {
-  return orederStatus;
+ @Override
+ public void notifyObservers() {
+    for(Observer observer : registeredObservers){
+     observer.update(this);
+    }
  }
 
- public void setOrederStatus(OrderStatus orederStatus) {
-  this.orederStatus = orederStatus;
+ public void changedOrderStatus(OrderStatus orderStatus){
+   setOrderStatus(orderStatus);
+   notifyObservers();
+ }
+
+ public Long getOrderNumber() {
+  return orderNumber;
+ }
+
+ public void setOrderNumber(Long orderNumber) {
+  this.orderNumber = orderNumber;
+ }
+
+ public OrderStatus getOrderStatus() {
+  return orderStatus;
+ }
+
+ public void setOrderStatus(OrderStatus orderStatus) {
+  this.orderStatus = orderStatus;
  }
 }

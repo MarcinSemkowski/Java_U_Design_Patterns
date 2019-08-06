@@ -1,4 +1,4 @@
-package Observer.weather_forecast.weather_news;
+package Observer.weather_forecast.weather;
 
 
 import Observer.weather_forecast.notify.Observer;

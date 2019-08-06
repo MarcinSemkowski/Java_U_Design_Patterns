@@ -1,4 +1,4 @@
-package Observer.weather_forecast.weather_news;
+package Observer.weather_forecast.weather;
 
 
 
@@ -50,6 +50,12 @@ public class WeatherForecast implements Observable {
     @Override
     public void unregisterObserver(Observer observer) {
       registerObservers.remove(observer);
+    }
+
+    public void updateForecast(int temperature,int pressure){
+       this.temperature = temperature;
+       this.pressure = pressure;
+       notifyObservers();
     }
 
     @Override

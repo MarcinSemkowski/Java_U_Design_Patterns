@@ -2,15 +2,15 @@ package Builder.classic;
 
 import Builder.inside.house.House;
 
-public interface HauseBuilder {
+public interface HouseBuilder {
 
 void buildWalls();
 void buildFloors();
 void buildRooms();
-void roof();
-void windows();
-void doors();
-void garage();
+void buildRoof();
+void buildWindows();
+void buildDoors();
+void buildGarage();
 
 
 House getHouse();

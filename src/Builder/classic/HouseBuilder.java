@@ -1,6 +1,6 @@
 package Builder.classic;
 
-import Builder.inside.house.House;
+
 
 public interface HouseBuilder {
 

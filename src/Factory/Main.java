@@ -1,14 +1,14 @@
 package Factory;
 
-import Factory.units.Factory;
-import Factory.units.Unit;
-import Factory.units.UnitFactory;
-import Factory.units.UnitType;
+import Factory.units.InfantryFactory;
+import Factory.units.InfantryUnit;
+import Factory.units.InfantryUnitFactory;
+import Factory.units.UnitInfantryType;
 
 public class Main {
     public static void main(String[] args) {
-        Factory factory = new UnitFactory();
-        Unit tank = factory.createUnit(UnitType.TANK);
-        Unit rifleman = factory.createUnit(UnitType.RIFLEMAN);
+        InfantryFactory infantryFactory = new InfantryUnitFactory();
+        InfantryUnit tank = infantryFactory.createUnit(UnitInfantryType.TANK);
+        InfantryUnit rifleman = infantryFactory.createUnit(UnitInfantryType.RIFLEMAN);
     }
 }

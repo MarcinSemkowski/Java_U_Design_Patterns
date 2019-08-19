@@ -1,8 +1,8 @@
-package Factory;
+package Factory.units;
 
 public class Tank extends Unit {
 
-    public Tank(int hp, int exp, int dmgDone) {
+     Tank(int hp, int exp, int dmgDone) {
         super(hp, exp, dmgDone);
     }
 }

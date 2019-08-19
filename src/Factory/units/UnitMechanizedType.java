@@ -2,6 +2,6 @@ package Factory.units;
 
 public enum UnitMechanizedType {
 
-    TANK,STRIKE_AIRCRAFT;
+    TANK, TANK_DESTROYER;
 
 }

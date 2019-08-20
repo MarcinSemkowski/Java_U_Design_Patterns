@@ -18,4 +18,16 @@ CMAX("998 cm3",FuelType.GASOLINE,2013)
         this.fuelType = fuelType;
         this.yearOfProduction = yearOfProduction;
     }
+
+    public String getEngineCapacity() {
+        return engineCapacity;
+    }
+
+    public FuelType getFuelType() {
+        return fuelType;
+    }
+
+    public int getYearOfProduction() {
+        return yearOfProduction;
+    }
 }

@@ -18,4 +18,15 @@ public enum BMWModel {
         this.yearOfProduction = yearOfProduction;
     }
 
+    public String getEngineCapacity() {
+        return engineCapacity;
+    }
+
+    public FuelType getFuelType() {
+        return fuelType;
+    }
+
+    public int getYearOfProduction() {
+        return yearOfProduction;
+    }
 }

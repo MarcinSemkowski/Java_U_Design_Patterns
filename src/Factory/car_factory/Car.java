@@ -8,11 +8,12 @@ public abstract class Car {
 
     private int yearOfProduction;
 
+   private SteeringWheelPositionType  SteeringWheelPosition;
 
-
-    public Car(String engineCapacity, FuelType fuelType, int yearOfProduction) {
+    public Car(String engineCapacity, FuelType fuelType, int yearOfProduction, SteeringWheelPositionType steeringWheelPosition) {
         this.engineCapacity = engineCapacity;
         this.fuelType = fuelType;
         this.yearOfProduction = yearOfProduction;
+        SteeringWheelPosition = steeringWheelPosition;
     }
 }

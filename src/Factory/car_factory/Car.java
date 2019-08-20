@@ -16,4 +16,8 @@ public abstract class Car {
         this.yearOfProduction = yearOfProduction;
         SteeringWheelPosition = steeringWheelPosition;
     }
+
+    public SteeringWheelPositionType getSteeringWheelPosition() {
+        return SteeringWheelPosition;
+    }
 }

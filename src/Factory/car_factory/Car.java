@@ -8,6 +8,8 @@ public abstract class Car {
 
     private int yearOfProduction;
 
+
+
     public Car(String engineCapacity, FuelType fuelType, int yearOfProduction) {
         this.engineCapacity = engineCapacity;
         this.fuelType = fuelType;

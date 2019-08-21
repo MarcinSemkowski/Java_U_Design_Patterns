@@ -1,6 +1,7 @@
 package Flyweight;
 
-public class Rifleman {
+public class TeslaTank {
+
 
     private int x;
     private int y;
@@ -8,7 +9,7 @@ public class Rifleman {
     private DestroyerUnitStats stats;
 
 
-    public Rifleman( int x, int y) {
+    public TeslaTank( int x, int y) {
         stats = UnitStatsRepository.getDestroyerStats();
         this.x = x;
         this.y =y;
@@ -16,8 +17,4 @@ public class Rifleman {
         this.hpLeft =  stats.getHp();
 
     }
-
-
-
-
 }

@@ -6,11 +6,11 @@ public class TeslaTank {
     private int x;
     private int y;
     private int  hpLeft;
-    private DestroyerUnitStats stats;
+    private TeslaTankUnitStats stats;
 
 
     public TeslaTank( int x, int y) {
-        stats = UnitStatsRepository.getDestroyerStats();
+        stats = UnitStatsRepository.getTeslaTankUnitStats();
         this.x = x;
         this.y =y;
 

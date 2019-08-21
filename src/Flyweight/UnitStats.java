@@ -1,6 +1,6 @@
 package Flyweight;
 
-public class TeslaTankUnitStats {
+public class UnitStats {
 
     private String name;
     private int hp;
@@ -10,7 +10,7 @@ public class TeslaTankUnitStats {
     private int resourceCost;
 
 
-    public TeslaTankUnitStats(String name, int hp, int armour, int damageDealt, int speed, int resourceCost) {
+    public UnitStats(String name, int hp, int armour, int damageDealt, int speed, int resourceCost) {
         this.name = name;
         this.hp = hp;
         this.armour = armour;
@@ -42,6 +42,6 @@ public class TeslaTankUnitStats {
     public int getResourceCost() {
         return resourceCost;
     }
-
-
 }
+
+

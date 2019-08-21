@@ -5,7 +5,7 @@ public class Rifleman {
     private int x;
     private int y;
     private int  hpLeft;
-    private RiflemanUnitStats stats;
+    private UnitStats stats;
 
 
     public Rifleman( int x, int y) {

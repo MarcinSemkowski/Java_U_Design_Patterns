@@ -7,7 +7,7 @@ public class Destroyer {
 private int x;
 private int y;
 private int  hpLeft;
-private DestroyerUnitStats stats;
+private UnitStats stats;
 
 
     public Destroyer( int x, int y) {

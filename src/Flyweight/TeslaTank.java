@@ -6,7 +6,7 @@ public class TeslaTank {
     private int x;
     private int y;
     private int  hpLeft;
-    private TeslaTankUnitStats stats;
+    private UnitStats stats;
 
 
     public TeslaTank( int x, int y) {

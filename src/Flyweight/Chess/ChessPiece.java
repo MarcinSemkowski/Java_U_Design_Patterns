@@ -19,4 +19,8 @@ Color color;
                      this.color = ColorRepository.getWhite();
         }
         }
+
+    public Color getColor() {
+        return color;
+    }
 }

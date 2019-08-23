@@ -1,5 +1,7 @@
 package Adapter;
 
+import java.util.TooManyListenersException;
+
 public class Main {
 
     public static void main(String[] args) {
@@ -15,9 +17,6 @@ public class Main {
 
        ContinentalDevice radio = ()-> System.out.println("Gra muzyka");
 
-      ContinentalSocket continentalSocket = new ContinentalSocket();
-      continentalSocket.plugIn(radio);
-
       /*
       UKDevice ukRadio = new UKDevice() {
           @Override
@@ -28,15 +27,18 @@ public class Main {
 
        */
 
+       UKDevice ukRadio = ()-> System.out.println("Gra muzyka z UK");
 
-      UKDevice ukRadio = ()-> System.out.println("Gra muzyka z UK");
+        ContinentalSocket continentalSocket = new ContinentalSocket();
 
-      UKSocket ukSocket = new UKSocket();
-      ukSocket.plugIn(ukRadio);
+        UKSocket ukSocket = new UKSocket();
 
-      UKToContinentalAdapter adapter = new UKToContinentalAdapter(ukRadio);
+        TwoWayAdapter adapter = new TwoWayAdapter(ukRadio,radio);
+        continentalSocket.plugIn(adapter);
+        ukSocket.plugIn(adapter);
 
-      continentalSocket.plugIn(adapter);
+
+
 
 
     }

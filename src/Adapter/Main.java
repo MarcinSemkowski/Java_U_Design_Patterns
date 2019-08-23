@@ -34,6 +34,8 @@ public class Main {
       UKSocket ukSocket = new UKSocket();
       ukSocket.plugIn(ukRadio);
 
+      //continentalSocket.plugIn(ukRadio);
+
 
     }
 }

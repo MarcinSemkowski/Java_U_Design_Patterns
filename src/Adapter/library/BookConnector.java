@@ -1,5 +1,7 @@
 package Adapter.library;
 
+import java.time.LocalDate;
+
 public class BookConnector {
 
     private final User user;

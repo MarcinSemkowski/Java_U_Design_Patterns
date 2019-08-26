@@ -9,11 +9,16 @@ public class Main {
     private static void generatedMap() {
 
         Terrain terrain = new Plain();
-        Terrain terrain1 = new ForrestHill();
-        Terrain terrain2 = new SwampPlain();
-        Terrain terrain3 = new SwampForrestPlain();
+        Terrain terrain1 = new Hill();
+        Terrain terrain2 = new SwampDecorator(new Hill());
+        Terrain terrain3 = new ForrestDecorator(new Plain());
 
 
+
+
+
+        System.out.println("SwampDecorator hill cost " + terrain2.fuelCost());
+        System.out.println("SwampDecorator forrest plain cost  " + terrain3.fuelCost());
 
     }
 }

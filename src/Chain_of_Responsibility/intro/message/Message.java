@@ -17,5 +17,11 @@ public class Message {
         return content;
     }
 
+    public OfficerRank getOfficerRank() {
+        return officerRank;
+    }
 
+    public int getCode() {
+        return code;
+    }
 }

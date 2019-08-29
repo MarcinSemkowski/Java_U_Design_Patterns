@@ -1,18 +1,22 @@
 package Chain_of_Responsibility.intro;
 
 import Chain_of_Responsibility.intro.message.Message;
-import Chain_of_Responsibility.intro.officer.Officer;
+import Chain_of_Responsibility.intro.officer.*;
 
 public class Main {
 
 
     public static void main(String[] args) {
-        Message message = new Message("Atakować !");
+        Message message = new Message("Atakować !",100, OfficerRank.GENERAL);
+         Officer sergeant = new Sergeant();
+         Officer captain = new Captain();
+          Officer general = new General();
 
-        Officer officer = new Officer();
+          sergeant.setSuperiorOfficer(captain);
+          captain.setSuperiorOfficer(general);
 
-//        officer.setCaptain(true);
-        officer.setSergeant(true);
-        officer.receiveMessage(message);
+          sergeant.processMessage(message);
+
+
     }
 }

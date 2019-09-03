@@ -14,4 +14,9 @@ public class RobotTurnOffCommand implements Command {
     public void execute() {
         robot.turnOff();
     }
+
+    @Override
+    public void undo() {
+        robot.turnOn();
+    }
 }

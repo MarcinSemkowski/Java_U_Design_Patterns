@@ -14,4 +14,9 @@ public class RobotCutCommand implements Command {
     public void execute() {
       robot.cut();
     }
+
+    @Override
+    public void undo() {
+
+    }
 }

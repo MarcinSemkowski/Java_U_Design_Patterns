@@ -14,4 +14,9 @@ public class CoffeMakerTurnOffCommand implements Command {
     public void execute() {
         coffeeMaker.turnOff();
     }
+
+    @Override
+    public void undo() {
+        coffeeMaker.turnOn();
+    }
 }

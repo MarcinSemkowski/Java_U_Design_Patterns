@@ -25,6 +25,11 @@ public class WorkshopApp {
         for (Command command : commandQueue){
            command.execute();
         }
-        commandQueue.clear();
+        //commandQueue.clear();
+    }
+    public void undoLastCommand(){
+      for(Command command : commandQueue){
+          command.undo();
+      }
     }
 }

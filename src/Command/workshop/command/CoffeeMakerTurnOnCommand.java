@@ -2,11 +2,11 @@ package Command.workshop.command;
 
 import Command.workshop.CoffeeMaker;
 
-public class CoffeeMakerTurnOffCommand implements Command {
+public class CoffeeMakerTurnOnCommand implements Command {
 
     private CoffeeMaker coffeeMaker;
 
-    public CoffeeMakerTurnOffCommand(CoffeeMaker coffeeMaker) {
+    public CoffeeMakerTurnOnCommand(CoffeeMaker coffeeMaker) {
         this.coffeeMaker = coffeeMaker;
     }
 

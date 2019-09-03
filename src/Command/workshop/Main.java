@@ -1,9 +1,6 @@
 package Command.workshop;
 
-import Command.workshop.command.RobotCutCommand;
-import Command.workshop.command.RobotDrillCommand;
-import Command.workshop.command.RobotTurnOffCommand;
-import Command.workshop.command.RobotTurnOnCommand;
+import Command.workshop.command.*;
 
 public class Main {
 
@@ -17,6 +14,11 @@ public class Main {
 
         workshopApp.run();
 
+        workshopApp.run();
+
+        CoffeeMaker coffeeMaker = new CoffeeMaker();
+        workshopApp.addToQueue(new CoffeeMakerTurnOnCommand(coffeeMaker));
+        workshopApp.addToQueue(new CoffeMakerTurnOffCommand(coffeeMaker));
         workshopApp.run();
 
 

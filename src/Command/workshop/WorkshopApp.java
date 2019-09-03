@@ -1,17 +1,29 @@
 package Command.workshop;
 
+import Command.workshop.command.Command;
+
+import java.util.ArrayList;
+import java.util.List;
+
 public class WorkshopApp {
 
-  private Robot robot;
+  private List<Command> commandQueue = new ArrayList<>();
 
-    public WorkshopApp(Robot robot) {
-        this.robot = robot;
+
+    public void addToQueue(Command command){
+       commandQueue.add(command);
+
     }
 
+
     public void run(){
-        robot.turnOn();
-        robot.cut();
-        robot.drill();
-        robot.turnOff();
+
+        if(commandQueue.isEmpty()){
+            System.out.println("Kolejka nie zawiera żadnych komend");
+        }
+
+        for (Command command : commandQueue){
+           command.execute();
+        }
     }
 }

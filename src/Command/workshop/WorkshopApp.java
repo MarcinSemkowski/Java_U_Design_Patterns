@@ -25,5 +25,6 @@ public class WorkshopApp {
         for (Command command : commandQueue){
            command.execute();
         }
+        commandQueue.clear();
     }
 }

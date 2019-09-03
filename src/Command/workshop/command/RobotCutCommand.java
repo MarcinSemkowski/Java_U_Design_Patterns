@@ -12,6 +12,6 @@ public class RobotCutCommand implements Command {
 
     @Override
     public void execute() {
-
+      robot.cut();
     }
 }

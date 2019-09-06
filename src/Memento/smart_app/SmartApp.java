@@ -1,0 +1,30 @@
+package Memento.smart_app;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class SmartApp {
+
+ private Double version;
+
+ private List<Double> versionList = new ArrayList<>();
+
+    public void setVersion(Double version) {
+        this.version = version;
+    }
+
+    public void setVersionList(List<Double> versionList) {
+        this.versionList = versionList;
+    }
+
+    public List<Double> getVersionList() {
+        return versionList;
+    }
+
+    @Override
+    public String toString() {
+        return "SmartApp{" +
+                "version=" + version +
+                '}';
+    }
+}

@@ -1,12 +1,14 @@
 package Strategy.chef;
 
+import Strategy.chef.egg_cooker.EggCookerStrategy;
+
 public class Chef {
 
     private String name;
-
+    private EggCookerStrategy eggCookerStrategy;
 
     public void cook(){
-        System.out.println("Gotuję jajka na twardo");
+        this.eggCookerStrategy.cookEgg();
     }
 
     public Chef(String name) {
@@ -21,4 +23,11 @@ public class Chef {
         this.name = name;
     }
 
+    public EggCookerStrategy getEggCookerStrategy() {
+        return eggCookerStrategy;
+    }
+
+    public void setEggCookerStrategy(EggCookerStrategy eggCookerStrategy) {
+        this.eggCookerStrategy = eggCookerStrategy;
+    }
 }

@@ -1,6 +1,8 @@
 package Visitor.gym.activity;
 
-public class Weights {
+import Visitor.gym.visitor.Visitor;
+
+public class Weights implements Activity {
 
 private int weight;
 private int reps;
@@ -10,7 +12,17 @@ private int reps;
         this.reps = reps;
     }
 
-    public  void calculateCaloriesBurned(){
-        System.out.println("Calories burned leafting weights : " + weight * reps * 2 );
+    @Override
+    public void accept(Visitor visitor) {
+        visitor.visit(this);
     }
+
+    public int getReps() {
+        return reps;
+    }
+
+    public int getWeight() {
+        return weight;
+    }
+
 }

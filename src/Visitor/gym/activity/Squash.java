@@ -1,6 +1,8 @@
 package Visitor.gym.activity;
 
-public class Squash {
+import Visitor.gym.visitor.Visitor;
+
+public class Squash implements Activity {
 
 private int minutesPlayed;
 
@@ -8,7 +10,13 @@ private int minutesPlayed;
         this.minutesPlayed = minutesPlayed;
     }
 
-    public  void calculateCaloriesBurned(){
-        System.out.println("Calories burned playing squash: " + minutesPlayed * 20 );
+    @Override
+    public void accept(Visitor visitor) {
+      visitor.visit(this);
     }
+
+    public int getMinutesPlayed() {
+        return minutesPlayed;
+    }
+
 }

@@ -1,16 +1,22 @@
 package Visitor.transport;
 
-public class Shipment {
+import Visitor.transport.Visitor.TransportVisitor;
+
+public class Shipment implements Transportable {
 
     private String prefix;
     private String serialNumber;
     private boolean isLarge;
 
-
     public Shipment(String prefix, String serialNumber, boolean isLarge) {
         this.prefix = prefix;
         this.serialNumber = serialNumber;
         this.isLarge = isLarge;
+    }
+
+    @Override
+    public void accept(TransportVisitor transportVisitor) {
+        transportVisitor.visit(this);
     }
 
     public String getPrefix() {
@@ -24,4 +30,5 @@ public class Shipment {
     public boolean isLarge() {
         return isLarge;
     }
+
 }

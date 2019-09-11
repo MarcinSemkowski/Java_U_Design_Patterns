@@ -1,20 +1,26 @@
 package Visitor.transport;
 
-public class Person {
+import Visitor.transport.Visitor.TransportVisitor;
 
-    private String firstName;
+public class Person implements Transportable {
+
+    private String fristName;
     private String lastName;
-    private boolean isReqularCustomer;
-
+    private boolean isRegularCustomer;
 
     public Person(String fristName, String lastName, boolean isRegularCustomer) {
-        this.firstName = fristName;
+        this.fristName = fristName;
         this.lastName = lastName;
-        this.isReqularCustomer = isRegularCustomer;
+        this.isRegularCustomer = isRegularCustomer;
+    }
+
+    @Override
+    public void accept(TransportVisitor transportVisitor) {
+        transportVisitor.visit(this);
     }
 
     public String getFristName() {
-        return firstName;
+        return fristName;
     }
 
     public String getLastName() {
@@ -22,7 +28,7 @@ public class Person {
     }
 
     public boolean isRegularCustomer() {
-        return isReqularCustomer;
+        return isRegularCustomer;
     }
 
 }

@@ -25,7 +25,7 @@ public class CoffeeMachine {
     }
 
     public void returnTheCoin() {
-
+     state.returnTheCoin(this);
     }
 
 

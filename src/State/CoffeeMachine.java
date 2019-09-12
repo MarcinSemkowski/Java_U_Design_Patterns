@@ -1,77 +1,39 @@
 package State;
 
+import State.states.NoCoinState;
+import State.states.State;
+
 public class CoffeeMachine {
 
-    State state;
+    private State state;
 
 
     public CoffeeMachine() {
-      state = State.NO_COIN;
+        state = new NoCoinState();
     }
 
     public void insertTheCoin() {
-        switch(state){
-            case NO_COIN:
-                System.out.println("Wrzucono monetę");
-                state = State.COIN_INSERTED;
-                break;
-            case COIN_INSERTED:
-                System.out.println("Moneta juz wrzucona ");
-                break;
-            case CUP_FULL:
-                System.out.println("Zabierz najpierw kubek");
-                break;
+        state.insertTheCoin(this);
+    }
 
-        }
+    public void pushTheButton() {
+        state.pushTheButton(this);
+    }
+
+    public void takeTheCup() {
+       state.takeTheCup(this);
+    }
+
+    public void returnTheCoin() {
 
     }
 
-   public void pushTheButton(){
-       switch(state){
-           case NO_COIN:
-               System.out.println("Brak Monety");
-               break;
-           case COIN_INSERTED:
-               System.out.println("Nalewam kawę ");
-               state = State.CUP_FULL;
-               break;
-           case CUP_FULL:
-               System.out.println("Zabierz najpierw kubek");
-               break;
 
-       }
-   }
+    public State getState() {
+        return state;
+    }
 
-   public void takeTheCup(){
-       switch(state){
-           case NO_COIN:
-               System.out.println("Brak monety");
-               break;
-           case COIN_INSERTED:
-               System.out.println("Wcisnij guzik");
-               break;
-           case CUP_FULL:
-               System.out.println("Zabrano kubek");
-
-
-       }
-   }
-   public void returnTheCoin(){
-       switch(state){
-           case NO_COIN:
-               System.out.println("Brak monety");
-               break;
-           case COIN_INSERTED:
-               System.out.println("Zwracam monete ");
-               state = State.NO_COIN;
-               break;
-           case CUP_FULL:
-               System.out.println("Zabierz najpierw kubek");
-
-       }
-   }
-
-   public enum State{
-        NO_COIN,COIN_INSERTED,CUP_FULL
-   }
+    public void setState(State state) {
+        this.state = state;
+    }
 }

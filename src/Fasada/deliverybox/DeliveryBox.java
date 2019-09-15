@@ -2,21 +2,21 @@ package Fasada.deliverybox;
 
 public class DeliveryBox {
 
-    public boolean isDeliveryFull() {
+     boolean isDeliveryFull() {
         System.out.println("Delivery Box is not Full");
         return false;
     }
 
-    public boolean isDeliveryBoxBroken() {
+     boolean isDeliveryBoxBroken() {
         System.out.println("Delivery Box is not Broken.");
         return false;
     }
 
-    public void getUserData(){
+     void getUserData(){
         System.out.println("User data entered.");
     }
 
-    public void openBox(){
+     void openBox(){
         System.out.println("Box opened");
     }
 }
